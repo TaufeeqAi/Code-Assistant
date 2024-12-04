@@ -10,7 +10,7 @@ st.sidebar.subheader("Model Selection")
 model_selected= st.sidebar.selectbox("Choose a model", ["Gemma2","Gemma","Llama3.2", "Llama3","Mistral"])
 
 ## initialize code assistant
-groq_api_key=st.secrets[GROQ_API_KEY']
+groq_api_key=st.secrets['GROQ_API_KEY']
 code_assistant= CodeAssistant(api_key=groq_api_key)
 model_name=str(code_assistant.get_model(default_model=model_selected))
 code_assistant.set_model(model_name=model_name)
